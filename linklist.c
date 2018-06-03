@@ -47,15 +47,15 @@ void removeNode(Node* node) {
 void removeNode(ListNode* pListHead, ListNode* pCurrent) {
 	  assert(pCurrent != NULL || pListHead != NULL);
 
-    if(pCurrent->next != NULL) { //要删除的节点不是最后一个节点
+    if(pCurrent->next != NULL) {
         ListNode* pNext = pCurrent->next;
         pCurrent->value = pNext->value;
         pCurrent->next = pNext->next;
         delete pNext;
         pNext = NULL;
-    } else {//要删除的节点是链表中最后一个节点
+    } else {
         ListNode* pNode = pListHead;
-        while(pNode->next != pCurrent) { //得到要删除节点的前继节点        
+        while(pNode->next != pCurrent) {  
             pNode = pNode->next;
         }
 
@@ -94,7 +94,7 @@ int main(){
 
     // print the original list  
     printList(pHead);
-    ListNode* pNext = pHead->next->next; //删除第个元素
+    ListNode* pNext = pHead->next->next;
     
     // remove node
     DeleteRandomNode(pNext);
